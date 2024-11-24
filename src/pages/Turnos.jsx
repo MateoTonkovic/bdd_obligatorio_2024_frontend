@@ -12,7 +12,7 @@ const Turnos = () => {
 
   const fetchTurnos = async () => {
     try {
-      const response = await fetch("http://localhost:8000/turnos/", {
+      const response = await fetch("http://127.0.0.1:8000/turnos/", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("bdd_token")}`,
         },
@@ -32,7 +32,7 @@ const Turnos = () => {
   const agregarTurno = async (e) => {
     e.preventDefault();
     try {
-      await fetch("http://localhost:8000/turnos/", {
+      await fetch("http://127.0.0.1:8000/turnos/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +50,7 @@ const Turnos = () => {
 
   const eliminarTurno = async (id) => {
     try {
-      await fetch(`http://localhost:8000/turnos/${id}`, {
+      await fetch(`http://127.0.0.1:8000/turnos/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("bdd_token")}`,

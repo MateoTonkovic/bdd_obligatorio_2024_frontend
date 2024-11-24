@@ -12,7 +12,7 @@ const Actividades = () => {
 
   const fetchActividades = async () => {
     try {
-      const response = await fetch("http://localhost:8000/actividades/", {
+      const response = await fetch("http://127.0.0.1:8000/actividades/", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("bdd_token")}`,
         },
@@ -32,7 +32,7 @@ const Actividades = () => {
   const agregarActividad = async (e) => {
     e.preventDefault();
     try {
-      await fetch("http://localhost:8000/actividades/", {
+      await fetch("http://127.0.0.1:8000/actividades/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +50,7 @@ const Actividades = () => {
 
   const eliminarActividad = async (id) => {
     try {
-      await fetch(`http://localhost:8000/actividades/${id}`, {
+      await fetch(`http://127.0.0.1:8000/actividades/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("bdd_token")}`,
@@ -66,7 +66,7 @@ const Actividades = () => {
   const guardarEdicion = async () => {
     try {
       await fetch(
-        `http://localhost:8000/actividades/${actividadSeleccionada.id}`,
+        `http://127.0.0.1:8000/actividades/${actividadSeleccionada.id}`,
         {
           method: "PUT",
           headers: {

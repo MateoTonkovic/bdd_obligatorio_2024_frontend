@@ -16,17 +16,17 @@ export default function AnotarAlumno() {
     try {
       const [clasesResponse, alumnosResponse, equipamientosResponse] =
         await Promise.all([
-          fetch("http://localhost:8000/clases/", {
+          fetch("http://127.0.0.1:8000/clases/", {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("bdd_token")}`,
             },
           }),
-          fetch("http://localhost:8000/alumnos/", {
+          fetch("http://127.0.0.1:8000/alumnos/", {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("bdd_token")}`,
             },
           }),
-          fetch("http://localhost:8000/equipamientos/", {
+          fetch("http://127.0.0.1:8000/equipamientos/", {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("bdd_token")}`,
             },
@@ -62,7 +62,7 @@ export default function AnotarAlumno() {
     e.preventDefault();
     try {
       await fetch(
-        `http://localhost:8000/clases/${anotacion.id_clase}/alumnos/`,
+        `http://127.0.0.1:8000/clases/${anotacion.id_clase}/alumnos/`,
         {
           method: "POST",
           headers: {

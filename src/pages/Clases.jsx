@@ -23,22 +23,22 @@ const Clases = () => {
         actividadesResponse,
         turnosResponse,
       ] = await Promise.all([
-        fetch("http://localhost:8000/clases/", {
+        fetch("http://127.0.0.1:8000/clases/", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("bdd_token")}`,
           },
         }),
-        fetch("http://localhost:8000/instructores/", {
+        fetch("http://127.0.0.1:8000/instructores/", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("bdd_token")}`,
           },
         }),
-        fetch("http://localhost:8000/actividades/", {
+        fetch("http://127.0.0.1:8000/actividades/", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("bdd_token")}`,
           },
         }),
-        fetch("http://localhost:8000/turnos/", {
+        fetch("http://127.0.0.1:8000/turnos/", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("bdd_token")}`,
           },
@@ -69,7 +69,7 @@ const Clases = () => {
   const agregarClase = async (e) => {
     e.preventDefault();
     try {
-      await fetch("http://localhost:8000/clases/", {
+      await fetch("http://127.0.0.1:8000/clases/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -93,7 +93,7 @@ const Clases = () => {
   const guardarEdicion = async () => {
     try {
       await fetch(
-        `http://localhost:8000/clases/${claseSeleccionada.id_clase}`,
+        `http://127.0.0.1:8000/clases/${claseSeleccionada.id_clase}`,
         {
           method: "PUT",
           headers: {

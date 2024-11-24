@@ -13,13 +13,13 @@ const Instructores = () => {
 
   const fetchInstructores = async () => {
     try {
-      const response = await fetch("http://localhost:8000/instructores/", {
+      const response = await fetch("http://127.0.0.1:8000/instructores/", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("bdd_token")}`,
           AccessControlAllowOrigin: "*",
         },
-        credentials: "include",
+        // credentials: "include",
       });
 
       const data = await response.json();
@@ -36,7 +36,7 @@ const Instructores = () => {
   const agregarInstructor = async (e) => {
     e.preventDefault();
     try {
-      await fetch("http://localhost:8000/instructores/", {
+      await fetch("http://127.0.0.1:8000/instructores/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -54,7 +54,7 @@ const Instructores = () => {
 
   const eliminarInstructor = async (ci) => {
     try {
-      await fetch(`http://localhost:8000/instructores/${ci}`, {
+      await fetch(`http://127.0.0.1:8000/instructores/${ci}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("bdd_token")}`,
@@ -70,7 +70,7 @@ const Instructores = () => {
   const guardarEdicion = async () => {
     try {
       await fetch(
-        `http://localhost:8000/instructores/${instructorSeleccionado.ci}`,
+        `http://127.0.0.1:8000/instructores/${instructorSeleccionado.ci}`,
         {
           method: "PUT",
           headers: {

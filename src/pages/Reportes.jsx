@@ -12,7 +12,7 @@ const Reportes = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:8000/reportes/${endpoint}`,
+        `http://127.0.0.1:8000/reportes/${endpoint}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("bdd_token")}`,

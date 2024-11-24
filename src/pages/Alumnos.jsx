@@ -16,7 +16,7 @@ const Alumnos = () => {
 
   const fetchAlumnos = async () => {
     try {
-      const response = await fetch("http://localhost:8000/alumnos/", {
+      const response = await fetch("http://127.0.0.1:8000/alumnos/", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("bdd_token")}`,
         },
@@ -36,7 +36,7 @@ const Alumnos = () => {
   const agregarAlumno = async (e) => {
     e.preventDefault();
     try {
-      await fetch("http://localhost:8000/alumnos/", {
+      await fetch("http://127.0.0.1:8000/alumnos/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const Alumnos = () => {
 
   const eliminarAlumno = async (ci) => {
     try {
-      await fetch(`http://localhost:8000/alumnos/${ci}`, {
+      await fetch(`http://127.0.0.1:8000/alumnos/${ci}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("bdd_token")}`,
@@ -76,7 +76,7 @@ const Alumnos = () => {
 
   const guardarEdicion = async () => {
     try {
-      await fetch(`http://localhost:8000/alumnos/${alumnoSeleccionado.ci}`, {
+      await fetch(`http://127.0.0.1:8000/alumnos/${alumnoSeleccionado.ci}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
